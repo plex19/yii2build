@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # yii console command
 /yii
 
@@ -30,10 +31,15 @@ phpunit.phar
 # local phpunit config
 /phpunit.xml
 =======
+=======
+>>>>>>> 5eca900a92981f778bd4d91241a3a5026948f09e
 assets/*
 !assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
+<<<<<<< HEAD
 >>>>>>> 53578f6090563a01694732c9f46efbdd44a627aa
+=======
+>>>>>>> 5eca900a92981f778bd4d91241a3a5026948f09e
