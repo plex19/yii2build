@@ -74,11 +74,13 @@ class User extends ActiveRecord implements IdentityInterface
         return [
 
            ['status_id', 'default', 'value' => self::STATUS_ACTIVE],
-	   [['status_id'],'in', 'range'=>array_keys($this->getStatusList())],
+           [['status_id'],'in', 'range'=>array_keys($this->getStatusList())],
+           
            ['role_id', 'default', 'value' => 10],
-	   ['role_id'],'in', 'range'=>array_keys($this->getRoleList())],
+           [['role_id'],'in', 'range'=>array_keys($this->getRoleList())],
+           
            ['user_type_id', 'default', 'value' => 10],
-	   ['user_type_id'],'in', 'range'=>array_keys($this->getUserTypeList())],
+           [['user_type_id'],'in', 'range'=>array_keys($this->getUserTypeList())],
 
            ['username', 'filter', 'filter' => 'trim'],
            ['username', 'required'],
@@ -89,7 +91,6 @@ class User extends ActiveRecord implements IdentityInterface
            ['email', 'required'],
            ['email', 'email'],
            ['email', 'unique'],
-           
 	   ];
     }
     
@@ -109,9 +110,6 @@ class User extends ActiveRecord implements IdentityInterface
              'userTypeName' => Yii::t('app', 'User Type'),
              'userTypeId' => Yii::t('app', 'User Type'),
              'userIdLink' => Yii::t('app', 'ID'),
-            
-            ];
-    }
             ];
     }
 
