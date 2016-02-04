@@ -20,7 +20,7 @@ use yii\jui\DatePicker;
     <?= $form->field($model, 'last_name')->textInput(['maxlength' => 45]) ?>
 <br>
 
- <?php echo $form->field($model,'birthdate')->widget(DatePicker::className(),
+<?php echo $form->field($model,'birthdate')->widget(DatePicker::className(),
 ['clientOptions' => ['dateFormat' => 'yy-mm-dd']]); ?>
  
 <br>       

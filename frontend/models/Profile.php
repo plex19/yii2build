@@ -44,7 +44,7 @@ class Profile extends \yii\db\ActiveRecord
             [['first_name', 'last_name'], 'string'],
             [['birthdate', 'created_at', 'updated_at'], 'safe'],
 	    [['gender_id'],'in', 'range'=>array_keys($this->getGenderList())],
-	    [['birthdate'], 'date', 'format'=>'Y-m-d']
+	 /**   [['birthdate'], 'date', 'format'=>'Y-m-d'] */
         ];
     }
 
@@ -160,15 +160,14 @@ class Profile extends \yii\db\ActiveRecord
         $options = [];
 	return Html::a($this->id, $url, $options);
 	}
-public function beforeValidate()
-{
-    if ($this->birthdate != null) {
-                            
-    $new_date_format = date('Y-m-d', strtotime($this->birthdate));
-    $this->birthdate = $new_date_format;
-    }   
 
-        return parent::beforeValidate();
-}
+     public function beforeValidate()
+    {
+	if ($this->birthdate != null) {
+	
+	$new_date_format = date('Y-m-d', strtotime($this->birthdate));			$this->birthdate = $new_date_format;
+	}
 
+		return parent::beforeValidate();
+	}
 }
